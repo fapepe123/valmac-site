@@ -624,25 +624,57 @@
     color: var(--ink-soft);
     letter-spacing: .03em;
   }
-  .repres-card[data-url]{
-    cursor: pointer;
+  .repres-card{
+    display: flex;
+    flex-direction: column;
   }
-  .repres-card .card-link{
+  .card-actions{
+    display: flex;
+    gap: .5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+  }
+  .card-btn{
     display: inline-flex;
     align-items: center;
-    margin-top: 1.5rem;
-    font-size: .72rem;
+    gap: .45rem;
+    padding: .65rem 1rem;
+    font-family: var(--sans);
+    font-size: .7rem;
     font-weight: 600;
-    letter-spacing: .2em;
+    letter-spacing: .15em;
     text-transform: uppercase;
-    color: var(--red);
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity var(--t-med), transform var(--t-med);
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: all var(--t-fast);
+    text-decoration: none;
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
   }
-  .repres-card[data-url]:hover .card-link{
-    opacity: 1;
-    transform: translateY(0);
+  .card-btn svg{
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+  .card-btn:hover{
+    background: var(--red);
+    color: white;
+    border-color: var(--red);
+    transform: translateY(-1px);
+  }
+  .card-btn.primary{
+    background: var(--ink);
+    color: white;
+    border-color: var(--ink);
+  }
+  .card-btn.primary:hover{
+    background: var(--red);
+    border-color: var(--red);
   }
   .repres-card.no-site::after{
     content: 'Em breve';
@@ -1031,7 +1063,7 @@
 
     <div class="repres-grid">
 
-      <article class="repres-card reveal" data-url="https://www.alifort.com.br/">
+      <article class="repres-card reveal">
         <div class="num">01</div>
         <h3>Alifort</h3>
         <span class="seg">Embalagens à Vácuo</span>
@@ -1039,10 +1071,15 @@
         <div class="products">
           <span class="pill">Linha completa</span>
         </div>
-        <span class="card-link" aria-hidden="true">Visitar site →</span>
+        <div class="card-actions">
+          <a class="card-btn primary" href="https://www.alifort.com.br/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+            Acessar site
+          </a>
+        </div>
       </article>
 
-      <article class="repres-card reveal" data-url="https://alpfilm.com.br/">
+      <article class="repres-card reveal">
         <div class="num">02</div>
         <h3>AlpFilm</h3>
         <span class="seg">Embalagens</span>
@@ -1052,10 +1089,19 @@
           <span class="pill">Embalagens</span>
           <span class="pill">Linha Protect</span>
         </div>
-        <span class="card-link" aria-hidden="true">Visitar site →</span>
+        <div class="card-actions">
+          <a class="card-btn primary" href="https://alpfilm.com.br/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+            Acessar site
+          </a>
+          <a class="card-btn" href="assets/catalogos/catalogo-alpfilm.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            Catálogo
+          </a>
+        </div>
       </article>
 
-      <article class="repres-card reveal" data-url="https://cacaufoods.com.br/">
+      <article class="repres-card reveal">
         <div class="num">03</div>
         <h3>Cacau Foods</h3>
         <span class="seg">Chocolates &amp; Confeitaria</span>
@@ -1064,10 +1110,19 @@
           <span class="pill">Chocolate</span>
           <span class="pill">Confeitaria</span>
         </div>
-        <span class="card-link" aria-hidden="true">Visitar site →</span>
+        <div class="card-actions">
+          <a class="card-btn primary" href="https://cacaufoods.com.br/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+            Acessar site
+          </a>
+          <a class="card-btn" href="assets/catalogos/catalogo-cacau-foods.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            Catálogo
+          </a>
+        </div>
       </article>
 
-      <article class="repres-card reveal" data-url="https://www.copaza.com.br/">
+      <article class="repres-card reveal">
         <div class="num">04</div>
         <h3>Copaza</h3>
         <span class="seg">Linha completa</span>
@@ -1075,10 +1130,19 @@
         <div class="products">
           <span class="pill">Multilinha</span>
         </div>
-        <span class="card-link" aria-hidden="true">Visitar site →</span>
+        <div class="card-actions">
+          <a class="card-btn primary" href="https://www.copaza.com.br/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+            Acessar site
+          </a>
+          <a class="card-btn" href="assets/catalogos/catalogo-copaza.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            Catálogo
+          </a>
+        </div>
       </article>
 
-      <article class="repres-card reveal" data-url="https://www.docemixcandy.com.br/">
+      <article class="repres-card reveal">
         <div class="num">05</div>
         <h3>Doce Mix</h3>
         <span class="seg">Doces &amp; Sobremesas</span>
@@ -1087,10 +1151,19 @@
           <span class="pill">Doces</span>
           <span class="pill">Confeitaria</span>
         </div>
-        <span class="card-link" aria-hidden="true">Visitar site →</span>
+        <div class="card-actions">
+          <a class="card-btn primary" href="https://www.docemixcandy.com.br/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+            Acessar site
+          </a>
+          <a class="card-btn" href="assets/catalogos/catalogo-docemix.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            Catálogo
+          </a>
+        </div>
       </article>
 
-      <article class="repres-card reveal no-site">
+      <article class="repres-card reveal">
         <div class="num">06</div>
         <h3>Elite</h3>
         <span class="seg">Descartáveis para Festas</span>
@@ -1101,9 +1174,15 @@
           <span class="pill">Talheres</span>
           <span class="pill">Decoração</span>
         </div>
+        <div class="card-actions">
+          <a class="card-btn primary" href="assets/catalogos/catalogo-elite.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            Baixar catálogo
+          </a>
+        </div>
       </article>
 
-      <article class="repres-card reveal" data-url="https://52grafica.com.br/">
+      <article class="repres-card reveal">
         <div class="num">07</div>
         <h3>52 Gráfica</h3>
         <span class="seg">Gráfica &amp; Papelaria</span>
@@ -1112,10 +1191,19 @@
           <span class="pill">Papelaria</span>
           <span class="pill">Gráficos</span>
         </div>
-        <span class="card-link" aria-hidden="true">Visitar site →</span>
+        <div class="card-actions">
+          <a class="card-btn primary" href="https://52grafica.com.br/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+            Acessar site
+          </a>
+          <a class="card-btn" href="assets/catalogos/catalogo-52grafica.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            Catálogo
+          </a>
+        </div>
       </article>
 
-      <article class="repres-card reveal" data-url="https://www.groupack.com.br/">
+      <article class="repres-card reveal">
         <div class="num">08</div>
         <h3>Groupack</h3>
         <span class="seg">Embalagens</span>
@@ -1123,10 +1211,15 @@
         <div class="products">
           <span class="pill">Embalagens</span>
         </div>
-        <span class="card-link" aria-hidden="true">Visitar site →</span>
+        <div class="card-actions">
+          <a class="card-btn primary" href="https://www.groupack.com.br/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+            Acessar site
+          </a>
+        </div>
       </article>
 
-      <article class="repres-card reveal" data-url="https://grupokromasa.com.br/">
+      <article class="repres-card reveal">
         <div class="num">09</div>
         <h3>Kromasa</h3>
         <span class="seg">Multilinha</span>
@@ -1134,10 +1227,19 @@
         <div class="products">
           <span class="pill">Linha completa</span>
         </div>
-        <span class="card-link" aria-hidden="true">Visitar site →</span>
+        <div class="card-actions">
+          <a class="card-btn primary" href="https://grupokromasa.com.br/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+            Acessar site
+          </a>
+          <a class="card-btn" href="assets/catalogos/catalogo-kromasa.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            Catálogo
+          </a>
+        </div>
       </article>
 
-      <article class="repres-card reveal" data-url="https://lamare.com.br/?elementor_library=em-breve-lamare">
+      <article class="repres-card reveal">
         <div class="num">10</div>
         <h3>Lamare</h3>
         <span class="seg">Panificação &amp; EPI</span>
@@ -1147,10 +1249,19 @@
           <span class="pill">EPI</span>
           <span class="pill">Panificação</span>
         </div>
-        <span class="card-link" aria-hidden="true">Visitar site →</span>
+        <div class="card-actions">
+          <a class="card-btn primary" href="https://lamare.com.br/?elementor_library=em-breve-lamare" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+            Acessar site
+          </a>
+          <a class="card-btn" href="assets/catalogos/catalogo-lamare.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            Catálogo
+          </a>
+        </div>
       </article>
 
-      <article class="repres-card reveal" data-url="https://www.mazel.com.br/produtos">
+      <article class="repres-card reveal">
         <div class="num">11</div>
         <h3>Mazel</h3>
         <span class="seg">Linha completa</span>
@@ -1158,7 +1269,16 @@
         <div class="products">
           <span class="pill">Multilinha</span>
         </div>
-        <span class="card-link" aria-hidden="true">Visitar site →</span>
+        <div class="card-actions">
+          <a class="card-btn primary" href="https://www.mazel.com.br/produtos" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+            Acessar site
+          </a>
+          <a class="card-btn" href="assets/catalogos/catalogo-mazel.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            Catálogo
+          </a>
+        </div>
       </article>
 
     </div>
@@ -1330,21 +1450,6 @@
   }, { threshold: 0.5 });
 
   document.querySelectorAll('.stat .n[data-target]').forEach(el => counterObserver.observe(el));
-
-  // CARDS CLICÁVEIS — abrem site da representada em nova aba
-  document.querySelectorAll('.repres-card[data-url]').forEach(card => {
-    const url = card.getAttribute('data-url');
-    card.setAttribute('role', 'link');
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('aria-label', `Visitar site de ${card.querySelector('h3')?.textContent || 'representada'}`);
-    card.addEventListener('click', () => window.open(url, '_blank', 'noopener,noreferrer'));
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        window.open(url, '_blank', 'noopener,noreferrer');
-      }
-    });
-  });
 
   // FORM — envia mensagem por e-mail via cliente de e-mail do visitante
   function handleSubmit(e){

@@ -909,7 +909,21 @@
       box-shadow: 0 20px 40px rgba(0,0,0,.06);
     }
     .hero .container{ grid-template-columns: 1fr; }
-    .hero-visual{ aspect-ratio: 1; max-width: 480px; margin: 0 auto; }
+    .hero-visual{
+      aspect-ratio: 1;
+      max-width: 480px;
+      margin: 3rem auto 1.5rem;
+    }
+    /* No mobile, o badge fica dentro do quadro, no canto inferior direito,
+       evitando sobrepor os botões acima */
+    .hero-visual .badge{
+      bottom: 1rem;
+      left: auto;
+      right: 1rem;
+      padding: 1rem 1.25rem;
+    }
+    .hero-visual .badge .num{ font-size: 2rem; }
+    .hero-visual .badge .lbl{ font-size: .65rem; }
     .sobre-grid{ grid-template-columns: 1fr; }
     .valores-grid{ grid-template-columns: 1fr; }
     .valor{ border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }

@@ -912,18 +912,11 @@
     .hero-visual{
       aspect-ratio: 1;
       max-width: 480px;
-      margin: 3rem auto 1.5rem;
+      margin: 1.5rem auto 0;
     }
-    /* No mobile, o badge fica dentro do quadro, no canto inferior direito,
-       evitando sobrepor os botões acima */
-    .hero-visual .badge{
-      bottom: 1rem;
-      left: auto;
-      right: 1rem;
-      padding: 1rem 1.25rem;
-    }
-    .hero-visual .badge .num{ font-size: 2rem; }
-    .hero-visual .badge .lbl{ font-size: .65rem; }
+    /* No mobile, escondemos o badge "+30 anos" — a mesma informação já
+       aparece logo abaixo no quadro de estatísticas da seção Sobre */
+    .hero-visual .badge{ display: none; }
     .sobre-grid{ grid-template-columns: 1fr; }
     .valores-grid{ grid-template-columns: 1fr; }
     .valor{ border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }
